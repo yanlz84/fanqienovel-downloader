@@ -486,7 +486,7 @@ def down_book(it, chapter_range=""):
 
     fg = '\n' + config['kgf'] * config['kg']
     if config['save_mode'] == 1:
-        text_file_path = os.path.join(config['save_path'], safe_name + '.txt')
+        text_file_path = os.path.join(config['save_path'], safe_name + + ' 作者：' + aa + '.txt')
         with open(text_file_path, 'w', encoding='UTF-8') as text_file:
             text_file.write(f'小说名：{name}\n作者：{author_name}\n内容简介：{description}\n')
             for chapter_title in zj:
@@ -1182,6 +1182,8 @@ def search():
                         break
                     elif choice_.isdigit() and 1 <= int(choice_) <= len(books):
                         chosen_book = books[int(choice_) - 1]
+                        global aa
+                        aa = chosen_book['book_data'][0]['author']
                         return chosen_book['book_data'][0]['book_id']
                     else:
                         print("输入无效，请重新输入。")
