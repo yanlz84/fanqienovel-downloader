@@ -211,7 +211,7 @@ class ConfigChecker:
             (self.check_config_format(config), "配置格式检查"),
             (self.check_required_fields(config), "必需字段检查"),
             (self.check_value_ranges(config), "数值范围检查"),
-            (self.check_directories(config), "目录检查")
+#            (self.check_directories(config), "目录检查")
         ]
         
         print("\n配置检查结果:")
@@ -1633,6 +1633,7 @@ data_dir = config.data_dir
 bookstore_dir = config.bookstore_dir
 record_path = os.path.join(data_dir, 'record.json')
 config_path = config.config_path
+aa = ''
 
 a = """
 ███████╗ █████╗ ███╗   ██╗ ██████╗ ██╗███████╗    ██████╗ ██╗     
